@@ -2,10 +2,10 @@
 <html>
 <head>
     <title>Flask API Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            max-width: 800px;
-            margin: 0 auto;
+            margin: 0;
             padding: 20px;
             font-family: Arial, sans-serif;
             text-align: center;
@@ -14,11 +14,13 @@
         h1 {
             margin-bottom: 20px;
         }
+        
         .message-container {
             margin-top: 30px;
         }
+
         img {
-            max-width: 300px;
+            max-width: 100%;
             max-height: 300px;
             margin-bottom: 10px;
         }
@@ -27,21 +29,24 @@
             text-decoration: none;
             color: blue;
         }
+
+        @media (min-width: 600px) {
+            body {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+
+            img {
+                max-width: 300px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+        }
     </style>
 </head>
 <body>
-<!--    <h1>请使用京东app扫码下方二维码:</h1>-->
-<!--    <div class="message-container">-->
-<!--        <img src="{{ auto_result }}" alt="QR Code">-->
-<!--        <br>-->
-<!--        <a href="{{ res }}" target="_blank">{{ res }}</a>-->
-<!--    </div>-->
-
-<!--    <h1>扫完点击下方按钮</h1>-->
-<!--    <form method="post" action="/send_api">-->
-<!--        <input type="submit" value="我已扫码">-->
-<!--    </form>-->
-
     {% if send_result %}
     <h1>您的wskey为:</h1>
     <p>{{ send_result }}</p>
