@@ -1,6 +1,6 @@
 
 """
-File: mxshl.py
+File: huuh_wskey.py
 作者：胡胡
 cron:  0 8,16,23 * * *
 new Env('huhu_wskey转换');
