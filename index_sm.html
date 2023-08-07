@@ -1,43 +1,11 @@
-<!--<!DOCTYPE html>-->
-<!--<html>-->
-<!--<head>-->
-<!--    <title>Flask API Demo</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--    <h1>自动请求 API 结果:</h1>-->
-<!--&lt;!&ndash;    <p>{{ auto_result }}</p>&ndash;&gt;-->
-<!--        <div class="message-container">-->
-<!--&lt;!&ndash;        <img class="bot-image" src="" alt="QR Code">&ndash;&gt;-->
-<!--&lt;!&ndash;            {{res}}<br>&ndash;&gt;-->
-
-<!--            <img src={{auto_result}} alt="QR Code" style="max-width: 300px; max-height: 300px;"><br>-->
-<!--            <a href="{{res}}" target="_blank">{{res}}</a>-->
-<!--            </div>-->
-<!--    <h1>发送 API 结果:</h1>-->
-<!--    <form method="post" action="/send_api">-->
-<!--&lt;!&ndash;        <label for="param1">参数1：</label>&ndash;&gt;-->
-<!--&lt;!&ndash;        <input type="text" id="param1" name="param1"  value="{{ auto_result }}"><br><br>&ndash;&gt;-->
-<!--&lt;!&ndash;        <label for="param2">参数2：</label>&ndash;&gt;-->
-<!--&lt;!&ndash;        <input type="text" id="param2" name="param2"><br><br>&ndash;&gt;-->
-<!--        <input type="submit" value="发送 API">-->
-<!--    </form>-->
-
-<!--    {% if send_result %}-->
-<!--    <h1>发送 API 返回结果:}</h1>-->
-<!--    <p>{{ send_result }}</p>-->
-<!--    {% endif %}-->
-<!--</body>-->
-<!--</html>-->
-
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Flask API Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            max-width: 800px;
-            margin: 0 auto;
+            margin: 0;
             padding: 20px;
             font-family: Arial, sans-serif;
             text-align: center;
@@ -52,7 +20,7 @@
         }
 
         img {
-            max-width: 300px;
+            max-width: 100%;
             max-height: 300px;
             margin-bottom: 10px;
         }
@@ -60,6 +28,13 @@
         a {
             text-decoration: none;
             color: blue;
+        }
+
+        @media (min-width: 600px) {
+            body {
+                max-width: 800px;
+                margin: 0 auto;
+            }
         }
     </style>
 </head>
@@ -77,7 +52,7 @@
     </form>
 
     {% if send_result %}
-    <h1>发送 API 返回结果:</h1>
+    <h1>你的wskey为：</h1>
     <p>{{ send_result }}</p>
     {% endif %}
 </body>
