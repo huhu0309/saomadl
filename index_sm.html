@@ -1,0 +1,84 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>Flask API Demo</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>自动请求 API 结果:</h1>-->
+<!--&lt;!&ndash;    <p>{{ auto_result }}</p>&ndash;&gt;-->
+<!--        <div class="message-container">-->
+<!--&lt;!&ndash;        <img class="bot-image" src="" alt="QR Code">&ndash;&gt;-->
+<!--&lt;!&ndash;            {{res}}<br>&ndash;&gt;-->
+
+<!--            <img src={{auto_result}} alt="QR Code" style="max-width: 300px; max-height: 300px;"><br>-->
+<!--            <a href="{{res}}" target="_blank">{{res}}</a>-->
+<!--            </div>-->
+<!--    <h1>发送 API 结果:</h1>-->
+<!--    <form method="post" action="/send_api">-->
+<!--&lt;!&ndash;        <label for="param1">参数1：</label>&ndash;&gt;-->
+<!--&lt;!&ndash;        <input type="text" id="param1" name="param1"  value="{{ auto_result }}"><br><br>&ndash;&gt;-->
+<!--&lt;!&ndash;        <label for="param2">参数2：</label>&ndash;&gt;-->
+<!--&lt;!&ndash;        <input type="text" id="param2" name="param2"><br><br>&ndash;&gt;-->
+<!--        <input type="submit" value="发送 API">-->
+<!--    </form>-->
+
+<!--    {% if send_result %}-->
+<!--    <h1>发送 API 返回结果:}</h1>-->
+<!--    <p>{{ send_result }}</p>-->
+<!--    {% endif %}-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask API Demo</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .message-container {
+            margin-top: 30px;
+        }
+
+        img {
+            max-width: 300px;
+            max-height: 300px;
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>请使用京东app扫码下方二维码:</h1>
+    <div class="message-container">
+        <img src="{{ auto_result }}" alt="QR Code">
+        <br>
+        <a href="{{ res }}" target="_blank">{{ res }}</a>
+    </div>
+
+    <h1>扫完点击下方按钮</h1>
+    <form method="post" action="/send_api">
+        <input type="submit" value="我已扫码">
+    </form>
+
+    {% if send_result %}
+    <h1>发送 API 返回结果:</h1>
+    <p>{{ send_result }}</p>
+    {% endif %}
+</body>
+</html>
