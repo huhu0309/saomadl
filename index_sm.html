@@ -2,10 +2,10 @@
 <html>
 <head>
     <title>Flask API Demo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            margin: 0;
+            max-width: 800px;
+            margin: 0 auto;
             padding: 20px;
             font-family: Arial, sans-serif;
             text-align: center;
@@ -20,7 +20,7 @@
         }
 
         img {
-            max-width: 100%;
+            max-width: 300px;
             max-height: 300px;
             margin-bottom: 10px;
         }
@@ -28,13 +28,6 @@
         a {
             text-decoration: none;
             color: blue;
-        }
-
-        @media (min-width: 600px) {
-            body {
-                max-width: 800px;
-                margin: 0 auto;
-            }
         }
     </style>
 </head>
@@ -52,8 +45,9 @@
     </form>
 
     {% if send_result %}
-    <h1>你的wskey为：</h1>
+    <h1>发送 API 返回结果:</h1>
     <p>{{ send_result }}</p>
+    <p>{{ ql }}</p>
     {% endif %}
 </body>
 </html>
